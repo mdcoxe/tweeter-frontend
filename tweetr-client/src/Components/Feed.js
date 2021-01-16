@@ -1,33 +1,75 @@
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../App.css";
+import { Link } from "react-router-dom";
 
 function Feed() {
-//   const [tweets, setTweets] = useState([]);
+  const [tweets, setTweets] = useState([]);
 
-//   const fetchTweets = async () => {
-//     try {
-//       const response = await fetch(
-//         " "
-//       );
-//       const data = await response.json();
-//       setTweets(data);
-//     } catch (error) {
-//       console.error(error);
-//     }
+  const fetchTweets = async () => {
+    try {
+      const res = await fetch("http://localhost:3000/tweets");
+      const json = await res.json();
+      setTweets(json)
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-//     useEffect(() => {
-//         fetchTweets();
-//     })
-//   };
+  const deleteTweet = async (id) => {
+    try {
+      const response = await fetch(`https://localhost:3000/tweets/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+      const data = await response.json();
+      const filteredTweets = tweets.filter((tweet) => tweet._id !== data._id);
+      setTweets(filteredTweets);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-    return (
-        <h1>Feed</h1>
-        // Map through the tweets
-        // Return tweets/properties
-        // Add buttons w/ links to create, show, update page
-        // Add button to delete tweet
-        // Add functionality for are you sure? 
-    );
-};
+  useEffect(() => {
+    fetchTweets();
+  });
+
+  return (
+    <>
+      <h1>Feed</h1>
+      <ul>
+        {tweets.map((tweet) => {
+          return (
+            <li key={tweet._id}>
+              {tweet.author}
+              <br />
+              {tweet.content}
+              <br />
+              <button type="button">
+                <Link to={`/feed/${tweet._id}`}>VIEW</Link>
+              </button>
+              <button>
+                <Link to={`/UpdateTweet/${tweet._id}`}>EDIT</Link>
+              </button>
+              <button
+                onClick={(event) => {
+                  deleteTweet(tweet._id);
+                }}
+              >
+                DELETE{" "}
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+    </>
+  );
+}
 
 export default Feed;
+
+// Map through the tweets
+// Return tweets/properties
+// Add buttons w/ links to create, show, update page
+// Add button to delete tweet
