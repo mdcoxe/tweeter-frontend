@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Feed from './Components/Feed.js'
 import CreateTweet from './Components/CreateTweet.js'
 import UpdateTweet from './Components/UpdateTweet.js'
+import ViewTweet from './Components/ViewTweet.js'
 
 function App() {
   return (    
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" exact component={Feed} />
         <Route path="/CreateTweet" component={CreateTweet} />
         <Route path="/UpdateTweet" component={UpdateTweet} />
+        <Route path="/ViewTweet" component={ViewTweet} />
       </Switch>
       </div>
     </Router>
