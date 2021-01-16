@@ -10,7 +10,7 @@ function App() {
     <Router>
       <div className="App">
       <Switch>
-        <Route path="/" exact component={Feed} />
+        <Route path="/Feed" component={Feed} />
         <Route path="/CreateTweet" component={CreateTweet} />
         <Route path="/UpdateTweet" component={UpdateTweet} />
         <Route path="/ViewTweet" component={ViewTweet} />

@@ -1,6 +1,7 @@
 import "../App.css";
 
-function UpdateTweet() {
+const UpdateTweet = (props) => {
+
     return (
         <h1>Update Tweet</h1>
     );
