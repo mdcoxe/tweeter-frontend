@@ -1,3 +1,4 @@
+import React from "react"
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Feed from './Components/Feed.js'
