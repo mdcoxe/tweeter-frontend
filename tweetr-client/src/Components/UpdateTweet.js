@@ -39,12 +39,14 @@ const UpdateTweetForm = (props) => {
     return (
         <>
         <h1>Update Tweet</h1>
-        <form onSubmit={UpdateTweet} method="post">
+        <form onSubmit={updateTweet} method="post">
                 <label>Tweet Title:</label>
+                    <input type="text" name="title" ref={updateTitleInput} />
                 <label>Tweet Author:</label>
+                    <input type="text" name="author" ref={updateAuthorInput} />
                 <label>Tweet Content:</label>
-                    {/* <input type="text" name="tweet" ref={tweetInput} /> */}
-                    <input type="submit" value="Send Tweet" id="submit-btn" />
+                    <input type="text" name="content" ref={updateContentInput} />
+                <input type="submit" value="Update Tweet" id="submit-btn" />
             </form> 
         </>
     );
