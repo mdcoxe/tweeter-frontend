@@ -17,14 +17,14 @@ function Feed() {
 
   const deleteTweet = async (id) => {
     try {
-      const response = await fetch(`https://localhost:3000/tweets/${id}`, {
+      const response = await fetch(`http://localhost:3000/tweets/${id}`, {
         method: "DELETE",
         headers: {
           "Content-type": "application/json",
         },
       });
       const data = await response.json();
-      const filteredTweets = tweets.filter((tweet) => tweet._id !== data._id);
+      const filteredTweets = tweets.filter((tweet) => tweet.id !== data.id);
       setTweets(filteredTweets);
     } catch (error) {
       console.log(error);
@@ -38,6 +38,9 @@ function Feed() {
   return (
     <>
       <h1>Feed</h1>
+      <button type="button">
+                <Link to={'/CreateTweet'}>NEW TWEET</Link>
+              </button>
       <ul>
         {tweets.map((tweet) => {
           return (
@@ -68,8 +71,3 @@ function Feed() {
 }
 
 export default Feed;
-
-// Map through the tweets
-// Return tweets/properties
-// Add buttons w/ links to create, show, update page
-// Add button to delete tweet
