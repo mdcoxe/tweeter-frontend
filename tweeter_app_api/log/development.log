@@ -71750,3 +71750,7 @@ Completed 404 Not Found in 5ms (ActiveRecord: 1.9ms | Allocations: 512)
 ActiveRecord::RecordNotFound (Couldn't find Tweet with 'id'=:id):
   
 app/controllers/tweets_controller.rb:44:in `set_tweet'
+Started GET "/ViewTweet/babel/parser/lib/index.js" for 127.0.0.1 at 2021-01-16 16:38:24 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/ViewTweet/babel/parser/lib/index.js"):
+  
