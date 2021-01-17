@@ -12,7 +12,6 @@ function App() {
       <Navbar 
         sticky="top" 
         expand="lg" 
-        style={{ background: "white" }} 
         className="shadow p-3 mb-0 mw-100 d-flex bg-primary rounded-bottom align-content-center justify-content-between"
       >
         <Link to='/Feed' className="text-white ">Home</Link>
@@ -25,11 +24,8 @@ function App() {
         <Route path="/CreateTweet" component={CreateTweet} />
         <Route path="/UpdateTweet" component={UpdateTweet} />
         <Route path="/ViewTweet/:id" component={ViewTweet}/>
-      
       </Switch>
-      
     </Router>
-   
   );
 }
 
