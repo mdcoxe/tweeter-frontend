@@ -12,8 +12,8 @@ function App() {
       <Switch>
         <Route path="/Feed" component={Feed} />
         <Route path="/CreateTweet" component={CreateTweet} />
-        <Route path="/UpdateTweet" component={UpdateTweet} />
-        <Route path="/ViewTweet" component={ViewTweet} />
+        <Route path="/UpdateTweet/:id" component={UpdateTweet} />
+        <Route path="/ViewTweet/:id" component={ViewTweet} />
       </Switch>
       </div>
     </Router>

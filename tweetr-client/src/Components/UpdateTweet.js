@@ -1,7 +1,7 @@
 import "../App.css";
 import { useRef } from 'react'
 
-const UpdateTweetForm = (props) => {
+const UpdateTweetForm = (routerProps) => {
     const updateTitleInput = useRef(null);
     const updateAuthorInput = useRef(null);
     const updateContentInput = useRef(null);
@@ -20,7 +20,7 @@ const UpdateTweetForm = (props) => {
         event.currentTarget.reset();
 
         try {
-            const response = await fetch(``,
+            const response = await fetch(`http://localhost:3000/tweets/${routerProps.match.params.id}`,
             {
                 method: "PUT",
                 headers: {
@@ -30,7 +30,7 @@ const UpdateTweetForm = (props) => {
             }
           );
 
-          props.history.push('/tweets')
+          routerProps.history.push('/feed')
         } catch (error) {
             console.error(error)
         }
@@ -39,7 +39,7 @@ const UpdateTweetForm = (props) => {
     return (
         <>
         <h1>Update Tweet</h1>
-        <form onSubmit={updateTweet} method="post">
+        <form onSubmit={updateTweet} method="put">
                 <label>Tweet Title:</label>
                     <input type="text" name="title" ref={updateTitleInput} />
                 <label>Tweet Author:</label>
