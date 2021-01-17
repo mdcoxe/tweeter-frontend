@@ -1,6 +1,9 @@
 import React from "react"
 import "../App.css";
 import { useRef } from 'react'
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 const UpdateTweetForm = (routerProps) => {
     const updateTitleInput = useRef(null);
@@ -39,16 +42,25 @@ const UpdateTweetForm = (routerProps) => {
 
     return (
         <>
-        <h1>Update Tweet</h1>
-        <form onSubmit={updateTweet} method="put">
-                <label>Tweet Title:</label>
-                    <input type="text" name="title" ref={updateTitleInput} />
-                <label>Tweet Author:</label>
-                    <input type="text" name="author" ref={updateAuthorInput} />
-                <label>Tweet Content:</label>
-                    <input type="text" name="content" ref={updateContentInput} />
-                <input type="submit" value="Update Tweet" id="submit-btn" />
-            </form> 
+            <div className="container d-flex justify-content-center">
+                <Card style={{width: "400px"}} border="primary" className="m-3 shadow">
+                    <Card.Body>
+                    <Card.Title className='mx-3 text-center font-weight-bold'>
+                        Update Tweet
+                    </Card.Title >
+                    <Form onSubmit={updateTweet} method="put">
+                        <Form.Label>Tweet Title:</Form.Label>
+                            <Form.Control type="text" name="title" ref={updateTitleInput} />
+                        <Form.Label>Tweet Author:</Form.Label>
+                            <Form.Control type="text" name="author" ref={updateAuthorInput} />
+                        <Form.Label>Tweet Content:</Form.Label>
+                            <Form.Control type="text" name="content" ref={updateContentInput} />
+                        <Button className="mt-4 float-right" type="submit" value="Update Tweet" id="submit-btn">Update tweets
+                        </Button>
+                    </Form> 
+                    </Card.Body>
+                </Card>
+            </div>
         </>
     );
 };
