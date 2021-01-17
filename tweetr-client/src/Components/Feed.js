@@ -33,7 +33,7 @@ function Feed() {
 
   useEffect(() => {
     fetchTweets();
-  });
+  }, []);
 
   return (
     <>
@@ -41,20 +41,20 @@ function Feed() {
       <ul>
         {tweets.map((tweet) => {
           return (
-            <li key={tweet._id}>
+            <li key={tweet.id}>
               {tweet.author}
               <br />
               {tweet.content}
               <br />
               <button type="button">
-                <Link to={`/feed/${tweet._id}`}>VIEW</Link>
+                <Link to={`/ViewTweet/${tweet.id}`}>VIEW</Link>
               </button>
               <button>
-                <Link to={`/UpdateTweet/${tweet._id}`}>EDIT</Link>
+                <Link to={`/UpdateTweet/${tweet.id}`}>EDIT</Link>
               </button>
               <button
                 onClick={(event) => {
-                  deleteTweet(tweet._id);
+                  deleteTweet(tweet.id);
                 }}
               >
                 DELETE{" "}

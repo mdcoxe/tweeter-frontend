@@ -1,14 +1,22 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+
 import "../App.css";
 
-function ViewTweet() {
+function ViewTweet(routerProps) {
 const [tweet, setTweet] = useState([]);
 
+
+
+
   const fetchTweet = async () => {
+    console.log(routerProps)
     try {
-      const res = await fetch(`https://localhost:3000/tweets/${id}`);
+      console.log(routerProps)
+      const res = await fetch(`http://localhost:3000/tweets/${routerProps.match.params.id}`);
       const json = await res.json();
+    
       setTweet(json)
+      
     } catch (error) {
       console.error(error);
     }
@@ -17,8 +25,6 @@ const [tweet, setTweet] = useState([]);
   useEffect(() => {
       fetchTweet();
   }, []);
-
-
     return (
         <>
             <h1>View Tweet</h1>
