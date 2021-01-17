@@ -1,6 +1,6 @@
 import "../App.css";
-import { Link } from "react-router-dom";
 import { useRef } from "react";
+import Card from 'react-bootstrap/Card';
 
 const CreateTweetForm = (props) => {
         const titleInput = useRef(null);
@@ -19,7 +19,6 @@ const CreateTweetForm = (props) => {
             });
     
             event.currentTarget.reset();
-    
             try {
                 const response = await fetch('http://localhost:3000/tweets',
                 {
@@ -30,7 +29,6 @@ const CreateTweetForm = (props) => {
                     body: body,
                 }
               );
-    
               props.history.push('/feed')
             } catch (error) {
                 console.error(error)
@@ -38,7 +36,6 @@ const CreateTweetForm = (props) => {
         }
 
     return (
-        // Add a nav here
         <>
         <h1>Create Tweet</h1> 
             <form onSubmit={createTweet} method="post">

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
+import Card from 'react-bootstrap/Card';
 
 function Feed() {
   const [tweets, setTweets] = useState([]);
@@ -15,58 +16,33 @@ function Feed() {
     }
   };
 
-  const deleteTweet = async (id) => {
-    try {
-      const response = await fetch(`http://localhost:3000/tweets/${id}`, {
-        method: "DELETE",
-        headers: {
-          "Content-type": "application/json",
-        },
-      });
-      const data = await response.json();
-      const filteredTweets = tweets.filter((tweet) => tweet.id !== data.id);
-      setTweets(filteredTweets);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
     fetchTweets();
   }, []);
 
   return (
-    <>
-      <h1>Feed</h1>
-      <button type="button">
-                <Link to={'/CreateTweet'}>NEW TWEET</Link>
-              </button>
-      <ul>
+    <div className="home">
+      <h1 className="text-primary">Tweetr Feed</h1>
+        <div className="card  bg-primary">
         {tweets.map((tweet) => {
           return (
-            <li key={tweet.id}>
-              {tweet.author}
-              <br />
-              {tweet.content}
-              <br />
-              <button type="button">
-                <Link to={`/ViewTweet/${tweet.id}`}>VIEW</Link>
-              </button>
-              <button>
-                <Link to={`/UpdateTweet/${tweet.id}`}>EDIT</Link>
-              </button>
-              <button
-                onClick={(event) => {
-                  deleteTweet(tweet.id);
-                }}
-              >
-                DELETE{" "}
-              </button>
-            </li>
+            <Card style={{width: "400px"}} border="primary" className="m-3" key={tweet.id}>
+              <Card.Body>
+                <Card.Title className='text-center font-weight-bold'>
+                  <Link to={`/ViewTweet/${tweet.id}`}>
+                    {tweet.title}
+                  </Link>
+                </Card.Title>
+                <Card.Subtitle className="mb-2 text-muted font-italic font-weight-light" >
+                ~{tweet.author}
+                </Card.Subtitle>
+                <Card.Text className="text-dark ">{tweet.content}</Card.Text>
+              </Card.Body>
+            </Card>
           );
         })}
-      </ul>
-    </>
+      </div>
+    </div>
   );
 }
 

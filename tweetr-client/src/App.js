@@ -8,28 +8,18 @@ import Navbar from 'react-bootstrap/Navbar'
 
 function App() {
   return (   
-    <div className="App"> 
     <Router>
-          <Navbar 
-            bg="dark" 
-            variant="dark"
-            sticky="top"
-            expand="lg"
-            style={{ background: "white" }}
-            className="shadow p-3 mb-0 bg- rounded justify-content-between"
-          >
-            <Navbar.Brand href="/Feed">
-              <img
-                alt=""
-                src="./Resources/twitter.svg"
-                width="30px"
-                height="30px"
-                className="d-inline-block align-top"
-              />{' '}
-              Tweetr
-            </Navbar.Brand>
-          </Navbar>
-        
+      <Navbar 
+        sticky="top" 
+        expand="lg" 
+        style={{ background: "white" }} 
+        className="shadow p-3 mb-0 mw-100 d-flex bg-primary rounded-bottom align-content-center justify-content-between"
+      >
+        <Link to='/Feed' className="text-white ">Home</Link>
+        <h1 className="bg-primary text-white ">Tweetr</h1>
+        <Link to='/CreateTweet' className="text-white">Create Tweet</Link>
+      </Navbar>
+
       <Switch>
         <Route path="/Feed" component={Feed} />
         <Route path="/CreateTweet" component={CreateTweet} />
@@ -39,7 +29,7 @@ function App() {
       </Switch>
       
     </Router>
-    </div>
+   
   );
 }
 
