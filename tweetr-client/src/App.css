@@ -1,13 +1,7 @@
-
-
 .home {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
-  height: 700px;
   color: white;
 }
-.card{
-  background-color: #15202B;
-}
+

@@ -23,7 +23,7 @@ function Feed() {
   return (
     <div className="home">
       <h1 className="text-primary">Tweetr Feed</h1>
-        <div className="card  bg-primary">
+        <div className="card ">
         {tweets.map((tweet) => {
           return (
             <Card style={{width: "400px"}} border="primary" className="m-3" key={tweet.id}>
