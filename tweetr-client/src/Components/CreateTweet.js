@@ -1,6 +1,8 @@
 import "../App.css";
 import { useRef } from "react";
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 const CreateTweetForm = (props) => {
         const titleInput = useRef(null);
@@ -19,6 +21,7 @@ const CreateTweetForm = (props) => {
             });
     
             event.currentTarget.reset();
+            
             try {
                 const response = await fetch('http://localhost:3000/tweets',
                 {
@@ -37,16 +40,24 @@ const CreateTweetForm = (props) => {
 
     return (
         <>
-        <h1>Create Tweet</h1> 
-            <form onSubmit={createTweet} method="post">
-            <label>Tweet Title:</label>
-                    <input type="text" name="title" ref={titleInput} />
-                <label>Tweet Author:</label>
-                    <input type="text" name="author" ref={authorInput} />
-                <label>Tweet Content:</label>
-                    <input type="text" name="content" ref={contentInput} />
-                    <input type="submit" value="Send Tweet" id="submit-btn" />
-            </form> 
+            <div className="container d-flex justify-content-center">
+                <Card style={{width: "400px"}} border="primary" className="m-3 shadow">
+                    <Card.Body>
+                    <Card.Title className='text-center font-weight-bold'>
+                        Create Tweet
+                    </Card.Title> 
+                    <Form onSubmit={createTweet} method="post">
+                        <Form.Label>Tweet Title:</Form.Label>
+                                <Form.Control type="text" name="title" ref={titleInput} />
+                            <Form.Label>Tweet Author: </Form.Label>
+                                <Form.Control  type="text" name="author" ref={authorInput} />
+                            <Form.Label>Tweet Content: </Form.Label>
+                                <Form.Control  type="text" name="content" ref={contentInput} />
+                            <Button className="mt-4 float-right" type="submit"  id="submit-btn" >Send Tweet </Button>
+                    </Form>
+                    </Card.Body>
+                </Card>
+            </div>
         </>
     );
 };

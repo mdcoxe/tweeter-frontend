@@ -12,11 +12,11 @@ function App() {
       <Navbar 
         sticky="top" 
         expand="lg" 
-        className="shadow p-3 mb-0 mw-100 d-flex bg-primary rounded-bottom align-content-center justify-content-between"
+        className="shadow-lg p-3 mb-0 mw-100 d-flex bg-primary rounded-bottom align-content-center justify-content-between"
       >
-        <Link to='/Feed' className="text-white ">Home</Link>
+        <Link to='/Feed' className="text-white w-25">Home        </Link>
         <h1 className="bg-primary text-white ">Tweetr</h1>
-        <Link to='/CreateTweet' className="text-white">Create Tweet</Link>
+        <Link to='/CreateTweet' className="text-white w-25 d-flex justify-content-end ">Create Tweet</Link>
       </Navbar>
 
       <Switch>
