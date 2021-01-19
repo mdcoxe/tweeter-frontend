@@ -8,14 +8,14 @@ require 'faker'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-30.times do
+2.times do
     Tweet.create({
-        title: Faker::Twitter.user(include_status: false),
-        content: Faker::Twitter.status,
-        author: Faker::Twitter.screen_name
-        
+        author: Faker::Twitter.screen_name,
+        title: Faker::Twitter.status[:text],
+        content: Faker::Twitter.status[:text]
     })
 end
+
 
 # Tweet.create({
 #     title: "Just found this",
