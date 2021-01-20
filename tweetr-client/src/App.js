@@ -24,7 +24,7 @@ function App() {
         <Route path="/Feed" component={Feed} />
         <Route path="/CreateTweet" component={CreateTweet} />
         <Route path="/UpdateTweet" component={UpdateTweet} />
-        <Route path="/ViewTweet/:id" component={ViewTweet}/>
+        <Route path="/ViewTweet/:id" component={ViewTweet} />
       </Switch>
     </Router>
   );
