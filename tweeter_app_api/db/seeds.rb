@@ -28,3 +28,9 @@ end
 #     content: "Hey, I'm walkin' here!",
 #     author: "Nicky62"
 #   })
+
+
+# Reply.create([
+#     {content: "Wow, you're super good at math @Pythagoras570!", auther: "RainbowUnicorn781"},
+#     {content: "Walkin' where @Nicky62?", author: "GleefulDolphin123"}
+# ])
