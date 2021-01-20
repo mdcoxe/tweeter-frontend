@@ -31,6 +31,6 @@ end
 
 
 # Reply.create([
-#     {content: "Wow, you're super good at math @Pythagoras570!", auther: "RainbowUnicorn781"},
-#     {content: "Walkin' where @Nicky62?", author: "GleefulDolphin123"}
+#     {content: "Wow, you're super good at math @Pythagoras570!", author: "RainbowUnicorn781", tweet_id: 1},
+#     {content: "Walkin' where @Nicky62?", author: "GleefulDolphin123", tweet_id: 2}
 # ])
