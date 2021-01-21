@@ -1,0 +1,129 @@
+@font-face {
+  font-family: 'Cinzel';
+  src: url(./Cinzel.ttf);
+  }
+
+
+body.tweetr-app {
+  background-image: url('./ruins.jpg');
+  padding: 20px;
+  background-size: 100vw;
+  text-align: center;
+  width:
+}
+
+
+h1 {
+  font-family: 'Cinzel';
+  font-size: 4.5rem;
+  letter-spacing: 0.3rem;
+  text-shadow: 5px 10px 8px #050505af;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h3 {
+  margin-bottom: 5px;
+  margin-top: 2px;
+  font-family: 'Cinzel';
+}
+
+h4 {
+  font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+ul {
+  list-style: none;
+  margin: auto;
+  width: 35%;
+}
+
+p {
+  font-size: 16px;
+  font-family: 'Cinzel';
+  padding-top: 5px;
+}
+
+li {
+  background-image: url('./papyrus.jpg');
+  background-size: cover;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 5px 10px 8px #050505af;
+  text-align: left;
+}
+
+button {
+  margin: 5px;
+  background-color: #aec1d6;
+  border-radius: 3px;
+  font-family: 'Cinzel';
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#nav {
+  display: inline-flex;
+  margin: 0 50px 20px;
+  font-family: 'Cinzel';
+  text-decoration: underline;
+}
+
+
+#tweet-list {
+align-items: center;
+margin: auto;
+}
+
+
+#nav-container {
+  background-image: url('./papyrus.jpg');
+  box-shadow: 5px 10px 8px #050505af;
+  width:70%;
+  text-align: center;
+  padding: 10px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+#view-tweet {
+  background-image: url('./papyrus.jpg');
+  width:50%;
+  margin: 0 auto;
+  box-shadow: 5px 10px 8px #050505af;
+  text-align: left;
+  padding: 30px;
+}
+
+#trending {
+  text-align: left;
+  padding: 20px 20px;
+  background-image: url('./papyrus.jpg');
+  width: 15%;
+  font-family: 'Cinzel';
+  font-weight: bold;
+  box-shadow: 5px 10px 8px #050505af;
+  border-radius: 5px;
+}
+
+#favorite {
+    background-color: #aec1d6;
+}
+
+
+#favorite:focus {     
+    background-color:rgb(146, 2, 62); 
+    color: white;   
+}
