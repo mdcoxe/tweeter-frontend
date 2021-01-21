@@ -171,7 +171,7 @@ align-items: center;
   letter-spacing: 0.2rem;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
   #nav-container {
     width: 70%;
     height: 70%;
@@ -199,7 +199,7 @@ align-items: center;
   }
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (max-width: 480px) {
   body {
     height: 100%;
     display: block;
