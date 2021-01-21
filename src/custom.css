@@ -1,0 +1,6 @@
+/* remove rounding from cards, buttons and inputs */
+.card, .btn, .form-control { border-radius: 0; }
+
+.navbar-dark .navbar-nav .nav-link {
+    color: silver;
+  }
