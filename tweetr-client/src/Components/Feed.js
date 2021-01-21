@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import { useState, useEffect } from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
@@ -10,7 +10,7 @@ function Feed() {
     try {
       const res = await fetch("http://localhost:3000/tweets");
       const json = await res.json();
-      setTweets(json)
+      setTweets(json);
     } catch (error) {
       console.error(error);
     }
@@ -27,7 +27,6 @@ function Feed() {
       const data = await response.json();
       const filteredTweets = tweets.filter((tweet) => tweet.id !== data.id);
       setTweets(filteredTweets);
-
     } catch (error) {
       console.log(error);
     }
@@ -39,33 +38,45 @@ function Feed() {
 
   return (
     <>
-    {/* <div id="new-tweet-btn"><Link to='/CreateTweet'>NEW TWEET</Link></div> */}
-    <div className="App">
-    <ul>
-        {tweets.map((tweet) => {
-          return (
-            <li key={tweet.id}>
-              {/* <p>{tweet.title}</p> */}
-              <h3>@{tweet.author}</h3>
-              <h3>"{tweet.content}"</h3>
-              <button type="button">
-                <Link to={`/ViewTweet/${tweet.id}`}>VIEW</Link>
-              </button>
-              <button>
+      <span>
+        <div className="App">
+          <div id="trending">
+            <h2>THEMA TENORIS</h2>
+            #magistratum inierunt
+            <br />
+            #caedis caeser
+            <br />
+            #pandemus Covid
+            <br />
+            #feles bellus
+          </div>
+          <ul>
+            {tweets.map((tweet) => {
+              return (
+                <li key={tweet.id}>
+                  {/* <p>{tweet.title}</p> */}
+                  <h4>@{tweet.author}</h4>
+                  <h3>"{tweet.content}"</h3>
+                  <button type="button">
+                    <Link to={`/ViewTweet/${tweet.id}`}>VISUM</Link>
+                  </button>
+                  {/* <button>
                 <Link to={`/UpdateTweet/${tweet.id}`}>EDIT</Link>
-              </button>
-              <button
-                onClick={(event) => {
-                  deleteTweet(tweet.id);
-                }}
-              >
-                DELETE{" "}
-              </button>
-            </li>
-          );
-        })}
-      </ul>
-      </div>
+              </button> */}
+                  <button id="favorite">AMARE</button>
+                  <button
+                    onClick={(event) => {
+                      deleteTweet(tweet.id);
+                    }}
+                  >
+                    ERADO{" "}
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </span>
     </>
   );
 }

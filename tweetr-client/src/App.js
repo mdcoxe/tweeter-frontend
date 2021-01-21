@@ -10,7 +10,7 @@ function App() {
   return (   
     <Router>
       <div id="nav-container">
-        <Link to='/Feed'><h1>Tweetr</h1></Link>
+        <Link to='/Feed'><h1>trittilo</h1></Link>
           <div>
             <Link to='/CreateTweet' id="nav">NEW TWEET      </Link>
             <Link to='/CreateTweet' id="nav">LOGIN       </Link>
