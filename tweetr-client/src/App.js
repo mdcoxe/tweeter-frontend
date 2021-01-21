@@ -1,25 +1,22 @@
 import React from "react"
-import './App.css';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Feed from './Components/Feed.js'
 import CreateTweet from './Components/CreateTweet.js'
 import UpdateTweet from './Components/UpdateTweet.js'
 import ViewTweet from './Components/ViewTweet.js'
-import Navbar from 'react-bootstrap/Navbar'
+import './App.css';
 
 function App() {
   return (   
     <Router>
-      <Navbar 
-        sticky="top" 
-        expand="lg" 
-        className="shadow-lg p-3 mb-0 mw-100 d-flex bg-primary rounded-bottom align-content-center justify-content-between"
-      >
-        <Link to='/Feed' className="text-white w-25">Home        </Link>
-        <h1 className="bg-primary text-white ">Tweetr</h1>
-        <Link to='/CreateTweet' className="text-white w-25 d-flex justify-content-end ">Create Tweet</Link>
-      </Navbar>
-
+      <div id="nav-container">
+        <Link to='/Feed'><h1>Tweetr</h1></Link>
+          <div>
+            <Link to='/CreateTweet' id="nav">NEW TWEET      </Link>
+            <Link to='/CreateTweet' id="nav">LOGIN       </Link>
+            <Link to='/CreateTweet' id="nav">REGISTER</Link>
+          </div>
+      </div>
       <Switch>
         <Route path="/Feed" component={Feed} />
         <Route path="/CreateTweet" component={CreateTweet} />

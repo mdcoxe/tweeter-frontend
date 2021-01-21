@@ -2,7 +2,6 @@ import React from "react"
 import { useState, useEffect } from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
-import Card from 'react-bootstrap/Card';
 
 function Feed() {
   const [tweets, setTweets] = useState([]);
@@ -17,34 +16,57 @@ function Feed() {
     }
   };
 
+  const deleteTweet = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:3000/tweets/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+      const data = await response.json();
+      const filteredTweets = tweets.filter((tweet) => tweet.id !== data.id);
+      setTweets(filteredTweets);
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     fetchTweets();
   }, []);
 
   return (
-    <div className="home">
-      <h1 className="text-primary">Tweetr Feed</h1>
-        <div className="  bg-white">
+    <>
+    {/* <div id="new-tweet-btn"><Link to='/CreateTweet'>NEW TWEET</Link></div> */}
+    <div className="App">
+    <ul>
         {tweets.map((tweet) => {
           return (
-            <Card style={{width: "400px"}} border="primary" className="m-3 shadow" key={tweet.id}>
-              <Card.Body>
-                <Card.Title className='text-center font-weight-bold'>
-                  <Link to={`/ViewTweet/${tweet.id}`}>
-                    {tweet.title}
-                  </Link>
-                </Card.Title>
-                <Card.Subtitle className="mb-2 text-muted font-italic font-weight-light" >
-                ~{tweet.author}
-                </Card.Subtitle>
-                <Card.Text className="text-dark ">{tweet.content}</Card.Text>
-              </Card.Body>
-            </Card>
+            <li key={tweet.id}>
+              {/* <p>{tweet.title}</p> */}
+              <h3>@{tweet.author}</h3>
+              <h3>"{tweet.content}"</h3>
+              <button type="button">
+                <Link to={`/ViewTweet/${tweet.id}`}>VIEW</Link>
+              </button>
+              <button>
+                <Link to={`/UpdateTweet/${tweet.id}`}>EDIT</Link>
+              </button>
+              <button
+                onClick={(event) => {
+                  deleteTweet(tweet.id);
+                }}
+              >
+                DELETE{" "}
+              </button>
+            </li>
           );
         })}
-        </div>
-      
-    </div>
+      </ul>
+      </div>
+    </>
   );
 }
 
