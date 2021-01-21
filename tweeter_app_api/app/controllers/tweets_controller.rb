@@ -10,7 +10,10 @@ class TweetsController < ApplicationController
 
   # GET /tweets/1
   def show
-    render json: @tweet
+    #   Note: I changed the show route here to send back a json.object with 
+    #   a tweet-property and replies-property, which uses an ActiveRecord query to find 
+    #   the associated 'replies'.
+    render json: { tweet: @tweet, replies: @tweet.replies }
   end
 
   # POST /tweets
