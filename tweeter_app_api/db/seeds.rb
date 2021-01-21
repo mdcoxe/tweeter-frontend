@@ -8,29 +8,27 @@ require 'faker'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-6.times do
-    Tweet.create({
-        author: Faker::Twitter.screen_name,
-        title: Faker::Twitter.status[:text],
-        content: Faker::Twitter.status[:text]
-    })
-end
-
-
-# Tweet.create({
-#     title: "Just found this",
-#     content: "the square of the hypotenuse is equal to the sum of the squares of the other two sides",
-#     author: "Pythagoras570"
-#   })
-  
-#   Tweet.create({
-#     title: "I'm walkin' here",
-#     content: "Hey, I'm walkin' here!",
-#     author: "Nicky62"
-#   })
-
-
-# Reply.create([
-#     {content: "Wow, you're super good at math @Pythagoras570!", author: "RainbowUnicorn781", tweet_id: 1},
-#     {content: "Walkin' where @Nicky62?", author: "GleefulDolphin123", tweet_id: 2}
-# ])
+# Note: The Faker::Twitter gem is giving Latin dummy text. We're sticking with the Latin-Tweetr theme for our tweets and replies.
+# This default seed-data creates 10 default Tweets and 3 Replies for each Tweet which will render on the ViewTweet page.
+# 10.times do |i|
+#     Tweet.create({
+#         author: Faker::Twitter.screen_name,
+#         title: Faker::Twitter.status[:text],
+#         content: Faker::Twitter.status[:text]
+#     })
+#     Reply.create({
+#         content: Faker::Twitter.status[:text],
+#         author: Faker::Twitter.screen_name,
+#         tweet_id: i+1
+#     })
+#     Reply.create({
+#         content: Faker::Twitter.status[:text],
+#         author: Faker::Twitter.screen_name,
+#         tweet_id: i+1
+#     })
+#     Reply.create({
+#         content: Faker::Twitter.status[:text],
+#         author: Faker::Twitter.screen_name,
+#         tweet_id: i+1
+#     })
+# end
