@@ -23,6 +23,7 @@ function ViewTweet(routerProps) {
       console.error(error);
     }
   };
+  console.log(replies);
 
   const deleteTweet = async (id) => {
     try {
@@ -64,16 +65,24 @@ function ViewTweet(routerProps) {
         </div>
       </div>
       {/* Note: This maps over the 'reply' state and renders the replies using a bootstrap Card component. */}
+      <div>
+        
       {replies.map((currReply) => {
         return (
-          <li key={currReply.id}>
-            <br />
-            {currReply.author}
-            <br />
-            {currReply.content}
+          <>
+          {console.log('Hello')};
+          <ul>
+            <li key={currReply.id}>
+              <br />
+              {currReply.author}
+              <br />
+              {currReply.content}
           </li>
+          </ul>
+          </>
         );
       })}
+      </div>
     </>
   );
 }
