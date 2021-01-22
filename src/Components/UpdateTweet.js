@@ -3,6 +3,7 @@ import "../App.css";
 import { useRef } from 'react'
 
 const UpdateTweetForm = (routerProps) => {
+    const url = "https://tweetr-backend.herokuapp.com"
     const updateTitleInput = useRef(null);
     const updateAuthorInput = useRef(null);
     const updateContentInput = useRef(null);
@@ -21,7 +22,7 @@ const UpdateTweetForm = (routerProps) => {
         event.currentTarget.reset();
 
         try {
-            const response = await fetch(`http://localhost:3000/tweets/${routerProps.match.params.id}`,
+            const response = await fetch(`${url}/tweets/${routerProps.match.params.id}`,
             {
                 method: "PUT",
                 headers: {

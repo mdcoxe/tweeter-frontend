@@ -3,6 +3,7 @@ import "../App.css";
 import { useRef } from "react";
 
 const CreateTweetForm = (props) => {
+    const url = "https://tweetr-backend.herokuapp.com"
         const titleInput = useRef(null);
         const authorInput = useRef(null);
         const contentInput = useRef(null);
@@ -21,7 +22,7 @@ const CreateTweetForm = (props) => {
             event.currentTarget.reset();
             
             try {
-                const response = await fetch('http://localhost:3000/tweets',
+                const response = await fetch(`${url}/tweets`,
                 {
                     method: "POST",
                     headers: {

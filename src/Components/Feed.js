@@ -4,11 +4,12 @@ import "../App.css";
 import { Link } from "react-router-dom";
 
 function Feed() {
+  const url = "https://tweetr-backend.herokuapp.com"
   const [tweets, setTweets] = useState([]);
 
   const fetchTweets = async () => {
     try {
-      const res = await fetch("http://localhost:3000/tweets");
+      const res = await fetch(`${url}/tweets`);
       const json = await res.json();
       setTweets(json);
     } catch (error) {
@@ -18,7 +19,7 @@ function Feed() {
 
   const deleteTweet = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/tweets/${id}`, {
+      const response = await fetch(`${url}/tweets/${id}`, {
         method: "DELETE",
         headers: {
           "Content-type": "application/json",
