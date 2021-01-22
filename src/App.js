@@ -62,9 +62,11 @@ function App() {
         username: state.username,
         password: state.password,
       });
+      console.log(response.data)
       localStorage.token = response.data.token;
-      console.log(localStorage)
       setIsLoggedIn(true);
+      console.log(isLoggedIn)
+      console.log(localStorage.token)
     } catch (error) {
       console.log(error);
     }
