@@ -39,6 +39,7 @@ function ViewTweet(routerProps) {
     } catch (error) {
       console.log(error);
     }
+    // props.history.push('/')
   };
 
   useEffect(() => {
