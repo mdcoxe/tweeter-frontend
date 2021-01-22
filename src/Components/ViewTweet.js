@@ -19,13 +19,12 @@ function ViewTweet(routerProps) {
       // e.g. render json: { tweet: @tweet, replies: @tweet.replies }
       const json = await res.json();
       setTweet(json.tweet);
-      console.log(json.replies)
       setReplies(json.replies);
     } catch (error) {
       console.error(error);
     }
   };
-  console.log(replies);
+  
 
   const deleteTweet = async (id) => {
     try {
@@ -67,21 +66,21 @@ function ViewTweet(routerProps) {
           </button>
         </div>
       </div>
+      <ul>
       {/* Note: This maps over the 'reply' state and renders the replies using a bootstrap Card component. */}
       <div id="replies">
         {replies.map((currReply) => {
           return (
             <>
-              <ul>
                 <li key={currReply.id}>
                   <h4>@{currReply.author}</h4>
                   <h3>"{currReply.content}"</h3>
                 </li>
-              </ul>
             </>
           );
         })}
       </div>
+      </ul>
     </>
   );
 }
