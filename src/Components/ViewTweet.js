@@ -66,21 +66,21 @@ function ViewTweet(routerProps) {
           </button>
         </div>
       </div>
-      <ul>
+     
       {/* Note: This maps over the 'reply' state and renders the replies using a bootstrap Card component. */}
       <div id="replies">
-        {replies.map((currReply) => {
-          return (
-            <>
-                <li key={currReply.id}>
-                  <h4>@{currReply.author}</h4>
-                  <h3>"{currReply.content}"</h3>
-                </li>
-            </>
-          );
-        })}
+        <ul>
+          {replies.map((currReply) => {
+            return (
+                  <li key={currReply.id}>
+                    <h4>@{currReply.author}</h4>
+                    <h3>"{currReply.content}"</h3>
+                  </li>
+            );
+          })}
+        </ul>
       </div>
-      </ul>
+    
     </>
   );
 }
