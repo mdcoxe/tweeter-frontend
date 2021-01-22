@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: 'Cinzel';
   src: url(./Cinzel.ttf);
@@ -9,7 +13,10 @@ body.tweetr-app {
   padding: 20px;
   background-size: 100vw;
   text-align: center;
-  width:
+}
+
+.App {
+  display: flex;
 }
 
 
@@ -20,6 +27,12 @@ h1 {
   text-shadow: 5px 10px 8px #050505af;
   text-align: center;
   margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+h2 {
+  font-family: 'Cinzel'; 
+  font-weight: bold;
 }
 
 h3 {
@@ -74,6 +87,12 @@ a {
   text-decoration: none;
 }
 
+label {
+  font-family: 'Cinzel';
+  font-weight: bold;
+  padding: 10px;
+}
+
 #nav {
   display: inline-flex;
   margin: 0 50px 20px;
@@ -84,7 +103,6 @@ a {
 
 #tweet-list {
 align-items: center;
-margin: auto;
 }
 
 
@@ -112,10 +130,14 @@ margin: auto;
   padding: 20px 20px;
   background-image: url('./papyrus.jpg');
   width: 15%;
+  height: 15%;
   font-family: 'Cinzel';
   font-weight: bold;
   box-shadow: 5px 10px 8px #050505af;
   border-radius: 5px;
+  text-decoration: underline;
+  margin-left: 15%;
+  margin-top: 1%;
 }
 
 #favorite {
@@ -126,4 +148,88 @@ margin: auto;
 #favorite:focus {     
     background-color:rgb(146, 2, 62); 
     color: white;   
+}
+
+#replies {
+  font-family: 'Cinzel';
+  font-weight: Bold;
+}
+
+#feed {
+  margin-right: 30%;
+}
+
+#create-tweet {
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px;
+  background-image: url('./papyrus.jpg');
+  text-align: center;
+  width: 30%;
+  box-shadow: 5px 10px 8px #050505af;
+  border-radius: 5px;
+  letter-spacing: 0.2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  #nav-container {
+    width: 70%;
+    height: 70%;
+  }
+  #trending {
+    width: 60%;
+    margin: 0 auto;
+  }
+  #feed
+  {
+    width: 90%;
+    height: 100%;
+    margin-right: 50px;
+  }
+  body.tweetr-app 
+  {
+    width: 100%;
+    background-size: auto;
+  }
+  h1 {
+    font-size: 48px;
+  }
+  .App {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    height: 100%;
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  
+  #nav-container {
+    width: 70%;
+    height: 70%;
+  }
+  #trending {
+    display: none;
+  }
+  #feed
+  {
+    width: 90%;
+    height: 100%;
+    margin-right: 50px;
+  }
+  body.tweetr-app 
+  {
+    width: 100%;
+    background-size: auto;
+  }
+  h1 {
+    font-size: 36px;
+  }
+  .App {
+    display: block;
+  }
 }

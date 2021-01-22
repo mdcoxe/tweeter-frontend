@@ -50,38 +50,34 @@ function ViewTweet(routerProps) {
       <div id="view-tweet">
         <h4>@{tweet.author}</h4>
         {tweet.title}
-        <h3>"{tweet.content}""</h3>
+        <h3>"{tweet.content}"</h3>
         <div>
           <a href={`/UpdateTweet/${tweet.id}`}>
-            <button>Edit</button>
+            <button>Renovatio</button>
           </a>
           <button
             onClick={(event) => {
               deleteTweet(tweet.id);
             }}
           >
-            Delete
+            Erado
           </button>
         </div>
       </div>
       {/* Note: This maps over the 'reply' state and renders the replies using a bootstrap Card component. */}
-      <div>
-        
-      {replies.map((currReply) => {
-        return (
-          <>
-          {console.log('Hello')};
-          <ul>
-            <li key={currReply.id}>
-              <br />
-              {currReply.author}
-              <br />
-              {currReply.content}
-          </li>
-          </ul>
-          </>
-        );
-      })}
+      <div id="replies">
+        {replies.map((currReply) => {
+          return (
+            <>
+              <ul>
+                <li key={currReply.id}>
+                  <h4>@{currReply.author}</h4>
+                  <h3>"{currReply.content}"</h3>
+                </li>
+              </ul>
+            </>
+          );
+        })}
       </div>
     </>
   );

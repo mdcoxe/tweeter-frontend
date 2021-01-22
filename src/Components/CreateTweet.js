@@ -1,9 +1,6 @@
 import React from "react"
 import "../App.css";
 import { useRef } from "react";
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 
 const CreateTweetForm = (props) => {
         const titleInput = useRef(null);
@@ -41,23 +38,22 @@ const CreateTweetForm = (props) => {
 
     return (
         <>
-            <div className="container d-flex justify-content-center">
-                <Card style={{width: "400px"}} border="primary" className="m-3 shadow">
-                    <Card.Body>
-                    <Card.Title className='text-center font-weight-bold'>
-                        Create Tweet
-                    </Card.Title> 
-                    <Form onSubmit={createTweet} method="post">
-                        <Form.Label>Tweet Title:</Form.Label>
-                                <Form.Control type="text" name="title" ref={titleInput} />
-                            <Form.Label>Tweet Author: </Form.Label>
-                                <Form.Control  type="text" name="author" ref={authorInput} />
-                            <Form.Label>Tweet Content: </Form.Label>
-                                <Form.Control  type="text" name="content" ref={contentInput} />
-                            <Button className="mt-4 float-right" type="submit"  id="submit-btn" >Send Tweet </Button>
-                    </Form>
-                    </Card.Body>
-                </Card>
+            <div id="create-tweet">
+                        <h2>Tritillo Novus</h2>
+                    <form onSubmit={createTweet} method="post">
+                        <label>Titulus:</label>
+                            <input type="text" name="title" ref={titleInput} />
+                            <br />
+                           <label>Auctor:</label>
+                                <input type="text" name="author" ref={authorInput} />
+                                <br />
+                            <label>Contentus: </label>
+                                <input  type="text" name="content" ref={contentInput} />
+                                <br />
+                            <button>MITTE</button>
+                            <br />
+                    </form>
+
             </div>
         </>
     );
