@@ -11,6 +11,7 @@ import Logout from './Components/Logout';
 import './App.css';
 
 function App() {
+  const url = "https://tweetr-backend.herokuapp.com"
   const [state, setState] = useState({
     username: "",
     password: "",
@@ -43,7 +44,7 @@ function App() {
   const handleSignUp = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://loclahost:3000/users/", {
+      const response = await axios.post(`${url}/users/`, {
         username: state.username,
         password: state.password,
       });
@@ -58,7 +59,7 @@ function App() {
   const handleLogIn = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/users/login", {
+      const response = await axios.post(`${url}/users/login`, {
         username: state.username,
         password: state.password,
       });

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import "../App.css";
 
 function ViewTweet(routerProps) {
+  const url = "https://tweetr-backend.herokuapp.com"
   const [tweet, setTweet] = useState([]);
   // This sets the replies state using the replies property on the json.object.
   const [replies, setReplies] = useState([]);
@@ -10,7 +11,7 @@ function ViewTweet(routerProps) {
   const fetchTweet = async () => {
     try {
       const res = await fetch(
-        `http://localhost:3000/tweets/${routerProps.match.params.id}`
+        `${url}/tweets/${routerProps.match.params.id}`
       );
       // Note: I changed the show route on the back end to send back a json.object with
       // a tweet-property and replies-property, which uses an ActiveRecord query to find
@@ -27,7 +28,7 @@ function ViewTweet(routerProps) {
 
   const deleteTweet = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/tweets/${id}`, {
+      const response = await fetch(`${url}/tweets/${id}`, {
         method: "DELETE",
         headers: {
           "Content-type": "application/json",
