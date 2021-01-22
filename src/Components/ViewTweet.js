@@ -19,6 +19,7 @@ function ViewTweet(routerProps) {
       // e.g. render json: { tweet: @tweet, replies: @tweet.replies }
       const json = await res.json();
       setTweet(json.tweet);
+      console.log(json.replies)
       setReplies(json.replies);
     } catch (error) {
       console.error(error);

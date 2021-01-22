@@ -12,7 +12,7 @@ function Register(props) {
                     <label htmlFor="password">Secretum: </label>
                     <input  type="text" name="password" onChange={props.handleInput}/>
                     <br />
-                    <button onClick={props.handleLogIn}>PARTUM</button>
+                    <button onClick={props.handleSignUp}>PARTUM</button>
                     <br />
                 </form>
             </div>
