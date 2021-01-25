@@ -1,5 +1,5 @@
 # trittilo - Ancient Roman Twitter
-General Assembly group project
+General Assembly Full-stack group project
 
 ![](https://imgur.com/SNcKG6B.png)
 
@@ -9,3 +9,9 @@ Contributors:
 - Amanda Hayes - React, CSS
 - Keefe Brown - Ruby on rails, figured out and implemented the faker API 
 - Michael Coxe - React, CSS, Authentication(frontend and backend)
+
+Stack:
+- React
+- Ruby on rails
+- PostgreSQL
+- JWT, Bcrypt
