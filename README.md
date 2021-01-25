@@ -1,6 +1,8 @@
 # trittilo - Ancient Roman Twitter
 General Assembly group project
 
+![](https://imgur.com/SNcKG6B.png)
+
 Contributors:
 
 - Mike Truong - Ruby on rails, built in routes, tweets and replies
